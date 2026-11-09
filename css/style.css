@@ -1,0 +1,64 @@
+/* ===== 1. БАЗОВЫЕ СТИЛИ ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5b5656;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ===== 2. КОНТЕЙНЕР МЕНЮ ===== */
+.sidebar {
+    width: 320px;
+    background-color: #101827;
+    padding: 16px 12px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ===== 3. ПУНКТЫ МЕНЮ ===== */
+.sidebar__link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: #7b8b9e; /* Серый цвет текста для неактивных */
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+/* ===== 4. ЛОКАЛЬНЫЕ ИКОНКИ (IMG) ===== */
+.sidebar__icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    filter: invert(60%) sepia(10%) saturate(400%) hue-rotate(180deg) brightness(90%) contrast(90%);
+}
+
+/* ===== 5. АКТИВНЫЙ ПУНКТ ===== */
+.sidebar__link--active {
+    background-color: #1a263b;
+    color: #ffffff; /* Белый текст */
+}
+
+/* ВАЖНО: Делаем иконку белой для активного пункта */
+.sidebar__link--active .sidebar__icon {
+    filter: brightness(0) invert(1); /* Это делает любой SVG полностью белым */
+}
+
+/* ===== 6. НАВЕДЕНИЕ ===== */
+.sidebar__link:not(.sidebar__link--active):hover {
+    color: #a0b0c5;
+    background-color: rgba(255, 255, 255, 0.03);
+}
